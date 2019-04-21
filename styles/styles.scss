@@ -1,0 +1,117 @@
+// * {
+//     padding: 0;
+//     margin: 0;
+// }
+// div {
+//     width: 100px;
+//     height: 100px;
+// }
+// div:nth-child(1) {
+//     background-color: blue;
+// }
+// div:nth-child(2) {
+//     width: 200px;
+//     height: 200px;
+//     background-color: blue;
+
+//     .middle {
+//         background-color: red;
+//         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75) inset;
+//         transform: translatey(50px) translatex(50px) rotate(45deg);
+//         transform: scale(0.5, 1.1);
+//         transform: skew(30deg);
+//         padding: 100px;
+//     }
+// }
+// div:nth-child(3) {
+//     background-color: lime;
+// }
+.block {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: lime;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        p {
+            max-width: 150px;
+            margin: 0;
+            // height: 150px;
+            // transform: translateX(100px) translatey(120px);
+            
+            &:nth-child(1)::before {
+                position: absolute;
+                content: ' ';
+                height: 5px;
+                width: 400px;
+                background-color: red;
+                left: 0px;
+                top: 50px;
+                transform: scale(0);
+                transition: all 0.3s;
+            }
+            &:nth-child(1)::after{
+                position: absolute;
+                content: ' ';
+                height: 400px;
+                width: 5px;
+                background-color: red;
+                left: 50px;
+                top: 0;
+                transform: scale(0);
+                transition: all 0.3s;
+            }
+            &:nth-child(2)::before {
+                position: absolute;
+                content: ' ';
+                height: 5px;
+                width: 400px;
+                background-color: red;
+                left: 0px;
+                top: 350px;
+                transform: scale(0);
+                transition: all 0.3s;
+            }
+            &:nth-child(2)::after {
+                position: absolute;
+                content: ' ';
+                height: 400px;
+                width: 5px;
+                background-color: red;
+                left: 350px;
+                top: 0;
+                transform: scale(0);
+                transition: all 0.3s;
+            }
+            // &:hover::before, &:hover::after {
+            //     transform: scale(1)
+            // }
+        }
+    }
+    &:hover div p::before {
+        transform: scale(0.9,0.3);
+        // width: 400px;
+    }
+    &:hover div p::after {
+        transform: scale(0.3,0.9);
+        // height: 400px;
+    }
+}
+
+.second_task {
+    background-image: url(https://i5.walmartimages.com/asr/7d33a628-5ac9-4568-b3d8-a7e68d518e76_1.7f938887b584cf46a8439c9eb8339a77.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF);
+    margin-top: 50px;
+    height: 450px;
+    width: 450px;
+    border: 1px dotted grey;
+    transform: rotateX(0deg);
+    transition: transform 1s;
+
+    &:hover {
+        transform: rotatey(360deg);
+    }
+}
